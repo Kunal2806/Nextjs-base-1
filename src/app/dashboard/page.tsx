@@ -18,6 +18,19 @@ export default async function DashboardPage() {
           Welcome, {session.user.name ?? 'User'}
         </p>
         <p className="text-sm text-white/60">{session.user.email}</p>
+
+        <form
+          action="/api/auth/signout"
+          method="post"
+          className="mt-6"
+        >
+          <button
+            type="submit"
+            className="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-500"
+          >
+            Sign out
+          </button>
+        </form>
       </div>
     </main>
   )
